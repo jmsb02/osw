@@ -15,12 +15,12 @@ void copy_file(const char* name1, const char* name2) {
     		exit(1);
 	}
 
-	if ( (fd2=open(name2,  O_CREAT|O_WRONLY|O_TRUNC, PERM)) < 0 ) {
+	if ( (fd2=open(name2, O_CREAT|O_WRONLY|O_TRUNC, PERM)) < 0 ) {
 		perror("fd2 creat err");
 		exit(1);
 	}
 
-	while ((n = read(fd1,buf,BUFSIZE)) > 0) {
+	while ((n = read(fd1, buf, BUFSIZE)) > 0) {
 		write(fd2, buf, n);
 	}
 
@@ -29,6 +29,6 @@ void copy_file(const char* name1, const char* name2) {
 }
 
 int main(int argc, char* argv[]) {
-	copy_file("input.txt","output.txt");
+	copy_file("input.txt", "output.txt");
 	return 0;
 }
